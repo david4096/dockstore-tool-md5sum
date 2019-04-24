@@ -1,4 +1,10 @@
 #!/bin/bash
 set -euf -o pipefail
 
+x=0
+while [ $x -le 1073741824 ]
+do
+	echo "flood $x"
+        x=$(($x+1))
+done
 md5sum ${1} | awk '{print $1}' > md5sum.txt
